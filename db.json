@@ -1,0 +1,58 @@
+
+
+
+{
+  "users": [
+    {
+      "username": "john",
+      "password": "password1"
+    },
+    {
+      "username": "jane",
+      "password": "password2"
+    }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel A",
+      "location": "City A",
+      "star": 1,
+      "contactNumber": "1234567890",
+      "acNonAc": "AC"
+    },
+    {
+      "id": 2,
+      "name": "Hotel B",
+      "location": "City B",
+      "star": 2,
+      "contactNumber": "9876543210",
+      "acNonAc": "Non-AC"
+    },
+    {
+      "id": 3,
+      "name": "Hotel C",
+      "location": "City C",
+      "star": 3,
+      "contactNumber": "9876543210",
+      "acNonAc": "Non-AC"
+    },
+    {
+      "id": 4,
+      "name": "Hotel D",
+      "location": "City D",
+      "star": 4,
+      "contactNumber": "9876543210",
+      "acNonAc": "Non-AC"
+    },
+    {
+      "id": 5,
+      "name": "Hotel E",
+      "location": "City E",
+      "star": 4,
+      "contactNumber": "9876543210",
+      "acNonAc": "Non-AC"
+    }
+  ]
+  
+}

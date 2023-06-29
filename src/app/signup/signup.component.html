@@ -1,0 +1,116 @@
+<p>signup works!</p>
+<div class="container">
+    <h2>Signup</h2>
+   
+        <form (ngSubmit)="signup()" #signupForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="name" required maxlength="20">
+            <div class="validation-message" *ngIf="signupForm.controls['name'].errors?.['required'] && signupForm.controls['name'].touched">
+              Name is required.
+            </div>
+            <div class="validation-message" *ngIf="signupForm.controls['name'].errors?.['maxlength'] && signupForm.controls['name'].touched">
+              Name should not exceed 20 characters.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required email>
+            <div class="validation-message" *ngIf="signupForm.controls['email'].errors?.['required'] && signupForm.controls['email'].touched">
+              Email is required.
+            </div>
+            <div class="validation-message" *ngIf="signupForm.controls['email'].errors?.['email'] && signupForm.controls['email'].touched">
+              Please enter a valid email address.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" [(ngModel)]="dob" required>
+            <div class="validation-message" *ngIf="signupForm.controls['dob'].errors?.['required'] && signupForm.controls['dob'].touched">
+              Date of Birth is required.
+            </div>
+            <div class="validation-message" *ngIf="signupForm.controls['dob'].errors?.['min'] && signupForm.controls['dob'].touched">
+              Age should be greater than 80.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="gender" value="male" [(ngModel)]="gender" required>
+                Male
+              </label>
+              <label>
+                <input type="radio" name="gender" value="female" [(ngModel)]="gender" required>
+                Female
+              </label>
+              <label>
+                <input type="radio" name="gender" value="other" [(ngModel)]="gender" required>
+                Other
+              </label>
+            </div>
+            <div class="validation-message" *ngIf="signupForm.controls['gender'].errors?.['required'] && signupForm.controls['gender'].touched">
+              Gender is required.
+            </div>
+          </div> 
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" [(ngModel)]="address"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" [(ngModel)]="country" required>
+              <option value="" disabled>Select country</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="UK">UK</option>
+              
+            </select>
+            <div class="validation-message" *ngIf="signupForm.controls['country'].errors?.['required'] && signupForm.controls['country'].touched">
+              Country is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state" [(ngModel)]="state" required>
+              <option value="" disabled>Select state</option>
+              <option value="CA">California</option>
+              <option value="NY">New York</option>
+              <option value="TX">Texas</option>
+             
+            </select>
+            <div class="validation-message" *ngIf="signupForm.controls['state'].errors?.['required'] && signupForm.controls['state'].touched">
+              State is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+            <div class="validation-message" *ngIf="signupForm.controls['password'].errors?.['required'] && signupForm.controls['password'].touched">
+              Password is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+            <div class="validation-message" *ngIf="signupForm.controls['confirmPassword'].errors?.['required'] && signupForm.controls['confirmPassword'].touched">
+              Confirm Password is required.
+            </div>
+            <div class="validation-message" *ngIf="signupForm.controls['confirmPassword'].value !== signupForm.controls['password'].value && signupForm.controls['confirmPassword'].touched">
+              Password and Confirm Password should match.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <button type="submit" [disabled]="!signupForm.form.valid">Signup</button>
+          </div>
+          
+          <div class="form-group">
+            <p>Already have an account? <a routerLink="/login">Login</a></p>
+          </div>

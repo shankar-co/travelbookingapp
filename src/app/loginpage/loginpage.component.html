@@ -1,0 +1,27 @@
+<p>loginpage works!</p>
+<div class="container">
+  <h2>Login</h2>
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </div>
+    <div class="form-group" *ngIf="showErrorMessage">
+      <p class="error-message">Invalid credentials</p>
+    </div>
+    <div class="form-group">
+      <p>Don't have an account? <a routerLink="/signup">Signup</a></p>
+    </div>
+  </form>
+</div>
+<div *ngFor="let user of users">
+    <p>{{ user.username }}</p>
+    <p>{{ user.password }}</p>
+  </div> 

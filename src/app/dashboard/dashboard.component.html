@@ -1,0 +1,55 @@
+
+<div>
+  <nav>
+    <div>
+      <img src="assets/logo/hotels-logo-41822.png" alt="Logo" class="logo-image">
+      <h2>Welcome to the Dashboard</h2>
+    </div>
+    
+    <ul>
+      <li><a routerLink="/hotel">Hotels</a></li>
+      <li><a routerLink="/booking">Booking</a></li>
+      <li><a routerLink="/travel">Travel</a></li>
+      <li><a routerLink="/flights">Flights</a></li>
+      <li><a routerLink="/cars">Cars</a></li>
+      <li><a routerLink="/trains">Trains</a></li>
+    </ul>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search hotels" [(ngModel)]="searchTerm">
+      <button (click)="search()">Search</button>
+    </div>
+
+  </nav>
+
+ 
+
+  
+</div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>ContactNumber</th>
+        <th>acNonAc</th>
+        <th>Star</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hotel of hotels">
+       
+        <td>{{ hotel.id }}</td>
+        <td><a [routerLink]="['/hoteldetail', hotel.id]">{{ hotel.name }}</a></td>
+        <td>{{ hotel.location }}</td>
+        <td>{{ hotel.contactNumber }}</td>
+        <td>{{ hotel.acNonAc }}</td>
+        <td>{{ hotel.star }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+
+
